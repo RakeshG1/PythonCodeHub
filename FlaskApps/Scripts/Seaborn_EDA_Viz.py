@@ -1,4 +1,5 @@
 # Import Libraries
+import pandas as pd
 import os
 import base64
 import matplotlib
@@ -17,9 +18,14 @@ def Hello_World():
 @app.route('/plot')
 def plot():
     img = BytesIO()
-    y = [1,2,3,4,5]
-    x = [34,23,67,2,78]
-    plt.plot(x,y)
+    x = [1,2,3,4,5]
+    y = [34,23,67,2,78]
+    df = pd.DataFrame({"x":x, "y":y})
+    #plt.plot(x,y)
+    sns.lineplot(x=x, y=y, data=df, marker='o')
+    plt.xlabel('X-Label')
+    plt.ylabel('Y-Label')
+    plt.title('Sample Scatter Plot')
     plt.savefig(img, format='png')
     plt.close()
     img.seek(0)
