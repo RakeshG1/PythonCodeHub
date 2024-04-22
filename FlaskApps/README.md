@@ -13,13 +13,14 @@ WARNING: This is a development server. Do not use it in a production deployment.
 ```
 
 ### Message - As Response
-![](.ReadmeImages/BasicMessage.png)
+<!-- ![](.ReadmeImages/BasicMessage.png) -->
+<img src=".ReadmeImages/BasicMessage.png" height ="250" width="400">
 
 ### Message - As Render HTML Response
-![](.ReadmeImages/Render_Message.png)
+<img src=".ReadmeImages/Render_Message.png" height ="250" width="400">
 
 ### Plot[`Seaborn`] - As Render HTML Response
-![](.ReadmeImages/SeabornPlot.png)
+<img src=".ReadmeImages/SeabornPlot.png" height ="250" width="400">
 
 ### Plot[`D3js`] - As Render HTML Response
-![](.ReadmeImages/D3js_Plot.png)
+<img src=".ReadmeImages/D3js_Plot.png" height ="250" width="400">
