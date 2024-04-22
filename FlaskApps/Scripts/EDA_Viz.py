@@ -15,8 +15,15 @@ app = Flask(__name__)
 def Hello_World():
     return 'Hello World'
 
-@app.route('/plot')
-def plot():
+@app.route("/welcome_page")
+def index():
+    # You can pass data to the template here (optional)
+    data = {"message": "Hello from Flask!"}
+    return render_template("index.html", data=data)  # Pass data as a dictionary
+
+
+@app.route('/plot_seaborn')
+def plot_static():
     img = BytesIO()
     x = [1,2,3,4,5]
     y = [34,23,67,2,78]
@@ -30,7 +37,19 @@ def plot():
     plt.close()
     img.seek(0)
     plot_url = base64.b64encode(img.getvalue()).decode('utf8')
-    return render_template('plot.html', plot_url=plot_url)
+    return render_template('plot[seaborn].html', plot_url=plot_url)
+
+@app.route('/plot_d3js')
+def plot_dynamic():
+    # data = [
+    #   { "x": 1, "y": 34 },
+    #   { "x": 2, "y": 23 },
+    #   { "x": 3, "y": 67 },
+    #   { "x": 4, "y": 2 },
+    #   { "x": 5, "y": 78 }
+    # ]
+    # return render_template('plot[d3js].html', chart_data=data)
+    return render_template('plot[d3js].html')
 
 @app.route('/stopServer', methods=['Get'])
 def stopServer():
@@ -38,4 +57,4 @@ def stopServer():
     return jsonify({"success": True, "message": "Server is shutting down..."})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000, debug=True)
