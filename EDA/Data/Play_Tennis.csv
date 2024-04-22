@@ -1,0 +1,15 @@
+Day,Outlook,Temprature,Humidity,Wind,Play_Tennis,No_of_Players,Ticket_Price,DateTime,EndDateTime,IceCreamCost
+D1,Sunny,Hot,High,Weak,No,6,10.6,2023-01-01 01:10:10,2023-01-01 03:10:10,0.2
+D2,Sunny,Hot,High,Strong,No,10,12.3,2023-01-02 02:30:10,2023-01-02 04:30:10,0.4
+D3,Overcast,Hot,High,Weak,Yes,28,20.6,2023-01-03 03:53:10,2023-01-03 05:53:10,1
+D4,Rain,Mild,High,Weak,Yes,45,40.3,2023-01-04 01:08:22,2023-01-04 03:08:22,1.4
+D5,Rain,Cool,Normal,Weak,Yes,56,60.6,2023-01-05 05:10:14,2023-01-05 07:10:14,1.6
+D6,Rain,Cool,Normal,Strong,No,08,8.2,2023-01-06 08:22:10,2023-01-06 10:22:10,0.3
+D7,Overcast,Cool,Normal,Strong,Yes,56,60.23,2023-01-06 14:25:18,2023-01-06 16:25:18,1.7
+D8,Sunny,Mild,High,Weak,No,12,5.23,2023-01-07 20:10:10,2023-01-07 22:10:10,0.5
+D9,Sunny,Cool,Normal,Weak,Yes,23,20.56,2023-01-08 02:35:22,2023-01-08 05:35:22,0.7
+D10,Rain,Mild,Normal,Weak,Yes,56,60.23,2023-01-09 10:10:20,2023-01-09 12:10:20,1.8
+D11,Sunny,Mild,Normal,Strong,Yes,12,8.75,2023-01-10 16:12:24,2023-01-10 18:12:24,0.6
+D12,Overcast,Mild,High,Strong,Yes,67,60.23,2023-01-11 20:10:28,2023-01-11 23:10:28,2
+D13,Overcast,Hot,Normal,Weak,Yes,45,38.55,2023-01-12 21:47:10,2023-01-12 22:47:10,1.4
+D14,Rain,Mild,High,Strong,No,2,1.12,2023-01-13 13:10:13,2023-01-13 14:10:13,0.2
