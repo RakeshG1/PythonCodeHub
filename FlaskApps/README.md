@@ -15,22 +15,22 @@ INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
 ### Message - As Response
 
 <!-- ![](.ReadmeImages/BasicMessage.png) -->
-<img src=".ReadmeImages/BasicMessage.png" height ="250" width="600">
+<img src=".ReadmeImages/BasicMessage.png" height ="350" width="800">
 
 ### Message - As Render HTML Response
 
-<img src=".ReadmeImages/Render_Message.png" height ="250" width="600">
+<img src=".ReadmeImages/Render_Message.png" height ="350" width="800">
 
 ### Plot[`Seaborn`] - As Render HTML Response
 
-<img src=".ReadmeImages/SeabornPlot.png" height ="250" width="600">
+<img src=".ReadmeImages/SeabornPlot.png" height ="350" width="800">
 
 ### Plot[`D3js`] - As Render HTML Response
 
-<img src=".ReadmeImages/D3js_Plot.png" height ="250" width="600">
+<img src=".ReadmeImages/D3js_Plot.png" height ="350" width="800">
 
 ### Swagger Documment
 
-<img src=".ReadmeImages/swagger-api.png" height ="250" width="600">
+<img src=".ReadmeImages/swagger-api.png" height ="500" width="800">
 
-<img src=".ReadmeImages/swagger-api-json-data.png" height ="250" width="600">
+<img src=".ReadmeImages/swagger-api-json-data.png" height ="500" width="800">
