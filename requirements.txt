@@ -1,3 +1,16 @@
 pandas
+flask # Flask API
+connexion[swagger-ui] # For swagger
+connexion[flask]
+connexion[uvicorn]
+matplotlib
+seaborn
+svgwrite # svg image creation
+sqlalchemy
+pyodbc
+pyyaml
+tqdm
+pandas-profiling
 ipykernel
 ipython
+nbconvert # to generate jupyter notebook -> to html report
