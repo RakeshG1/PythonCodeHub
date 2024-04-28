@@ -2,6 +2,7 @@
 import pandas as pd
 import os
 import base64
+import connexion # For swagger
 import matplotlib
 import matplotlib.pyplot as plt 
 import seaborn as sns 
@@ -10,6 +11,11 @@ from flask import Flask, render_template, jsonify
 
 # Flask API
 app = Flask(__name__)
+
+# With Swagger
+# ---------------
+app = connexion.App(__name__, specification_dir="./")
+app.add_api("./../swagger.yml")
 
 @app.route('/')
 def Hello_World():
@@ -51,10 +57,16 @@ def plot_dynamic():
     # return render_template('plot[d3js].html', chart_data=data)
     return render_template('plot[d3js].html')
 
+@app.route('/realtime_kpi')
+def get_svg():
+    return render_template("sample-kpi.svg")
+
+
 @app.route('/stopServer', methods=['Get'])
 def stopServer():
     os.kill(os.getpid(), signal.SIGINT)
     return jsonify({"success": True, "message": "Server is shutting down..."})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)

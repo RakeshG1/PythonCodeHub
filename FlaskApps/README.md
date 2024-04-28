@@ -3,24 +3,34 @@
 ### Run Flask App
 
 ```python
-(adv_python_env) ~/PythonCodeHub/FlaskApps/Scripts$ python EDA_Viz.py 
- * Serving Flask app 'Seaborn_EDA_Viz'
- * Debug mode: off
-WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
+(adv_python_env) ~/PythonCodeHub/FlaskApps/Scripts$ python EDA_Viz.py
+`ConnexionMiddleware.run` is optimized for development. For production, run using a dedicated ASGI server.
+INFO:     Started server process [13011]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
 
 ```
 
 ### Message - As Response
+
 <!-- ![](.ReadmeImages/BasicMessage.png) -->
-<img src=".ReadmeImages/BasicMessage.png" height ="250" width="400">
+<img src=".ReadmeImages/BasicMessage.png" height ="250" width="600">
 
 ### Message - As Render HTML Response
-<img src=".ReadmeImages/Render_Message.png" height ="250" width="400">
+
+<img src=".ReadmeImages/Render_Message.png" height ="250" width="600">
 
 ### Plot[`Seaborn`] - As Render HTML Response
-<img src=".ReadmeImages/SeabornPlot.png" height ="250" width="400">
+
+<img src=".ReadmeImages/SeabornPlot.png" height ="250" width="600">
 
 ### Plot[`D3js`] - As Render HTML Response
-<img src=".ReadmeImages/D3js_Plot.png" height ="250" width="400">
+
+<img src=".ReadmeImages/D3js_Plot.png" height ="250" width="600">
+
+### Swagger Documment
+
+<img src=".ReadmeImages/swagger-api.png" height ="250" width="600">
+
+<img src=".ReadmeImages/swagger-api-json-data.png" height ="250" width="600">

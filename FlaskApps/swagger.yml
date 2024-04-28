@@ -1,0 +1,19 @@
+# Swagger is a blueprint for your API
+# Version of your OpenAPI definition
+openapi: 3.0.0 
+info:
+  title: "Flask REST API"
+  description: "Flask API Desc"
+  version: "1.0.0" # API Version
+servers:
+  - url: "/api" # API Endpoint ex:  http://localhost:5000/api/ui
+paths:
+  /Play_Tennis_Json: 
+    get: 
+      operationId: "Play_Tennis.read_json" 
+      tags: 
+        - "Play_Tennis"
+      summary: "Read Play Tennis Json Data" 
+      responses:
+        "200":
+          description: "Read Play Tennis Json Data!!"
