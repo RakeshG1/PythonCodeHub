@@ -369,8 +369,7 @@ $ python -m ipykernel install --user --name=poetry_env --display-name "Python (P
 
 - Restart VS
 
-
-### Setting Up the Python Project on Another PC[Using Poetry: yproject.toml]
+### Setting Up the Python Project on Another PC[Using Poetry: pyproject.toml]
 
 `Step 1`: Install Poetry.
     - Ensure Poetry is installed on the new PC: check above steps
