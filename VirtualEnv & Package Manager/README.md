@@ -220,6 +220,26 @@ rga@local-vm:/mnt/Local/Git_Repo/PythonCodeHub/VirtualEnv & Package Manager$ ls 
 # -rwxrwxrwx 1 root root  2719 Nov 17 12:54 README.md
 ```
 
+- Downgrade python library
+
+```sh
+poetry add numpy==1.23.5
+```
+
+- Reinstall python library
+
+```sh
+poetry remove pmdarima
+poetry add pmdarima
+```
+
+- Clear Poetry’s Cache
+
+```sh
+poetry cache clear pypi --all
+poetry install # then reinstall python librarys
+```
+
 ### Activating Virtual Environment using Poetry
 
 ```sh
