@@ -1,4 +1,4 @@
-### Setup Docker[Ubuntu]
+## Setup Docker[Ubuntu]
 
 - ``Install Docker & Docker-Compose``
 ```bash
@@ -56,3 +56,4 @@ $ docker images
 #REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
 #hello-world   latest    d2c94e258dcb   18 months ago   13.3kB
 ```
+
