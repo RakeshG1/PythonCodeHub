@@ -27,7 +27,6 @@ print(f"Fruits List: {fruits}")
 # Ellipsis with --> Abstraction
 # -----------------------------
 from typing import Callable
-
 # Callable[..., int] in Python is a type hint that indicates a callable object (like a function) 
 # that can accept any number and type of arguments (denoted by the ellipsis ...) and will return an float
 def compute_data(func: Callable[..., float], *args) -> float: # This abstract function can be modified to include logging, error handling, or to apply multiple funs
