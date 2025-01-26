@@ -14,3 +14,8 @@
 
 - `Counter`: is a subclass of dict specifically designed for counting hashable objects. It stores elements as dictionary keys and their counts as values.
 - `defaultdict`: is a subclass of dict that provides a default value for nonexistent keys using a factory function. This prevents KeyError when accessing missing keys.
+
+### Major vs Minor Version
+
+- The major version in Python indicates a release with significant changes and possibly backward-incompatible features (e.g., Python 2 vs. Python 3).
+- The minor version indicates smaller feature updates or enhancements within the same major version (e.g., Python 3.9 vs. 3.10).
