@@ -1,6 +1,4 @@
-## Logging
-
-### Logging Best Practices:
+## Logging Best Practices:
 
 Use the logging Module:
 
@@ -35,7 +33,7 @@ logging.critical("This is a critical message.") # Level 50
 
 > **Note**: Filtering if level=logging.WARNING, only WARNING, ERROR, and CRITICAL messages will appear.
 
-### Execution
+**`Execution`**
 
 - Logging to file
 ```py
