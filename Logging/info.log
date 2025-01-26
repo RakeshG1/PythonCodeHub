@@ -1,0 +1,3 @@
+2025-01-26 18:30:09,105 - root - INFO - Started root code execution!
+2025-01-26 18:30:09,106 - a - ERROR - Error raised
+2025-01-26 18:30:09,108 - a - ERROR - division by zero
