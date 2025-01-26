@@ -1,10 +1,12 @@
 ## Create the Engine Package
 
-engine/
-│
-├── engine.py
-├── __init__.py
-└── pyproject.toml
+```md
+* engine/
+* │
+  * ├── engine.py
+  * ├── __init__.py
+  * └── pyproject.toml
+```
 
 * **engine.py**: Contains your engine logic.
 * **__init__.py**: An empty file (or can have code) indicating my_engine is a package.
