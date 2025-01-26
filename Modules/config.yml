@@ -1,7 +1,0 @@
-DB:
-  apple:
-    hostname: abc
-    username: a
-    password: "111"
-    port: 123
-    secure: true
