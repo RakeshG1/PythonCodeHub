@@ -46,4 +46,15 @@ git commit -m "new changes"
 git push origin new-branch
 ```
 
+## Revert a commit 
+
+- Which already pushed to remote Repo
+
+```sh
+$ git revert commit-id
+# $ git push --force
+# $ git push
+$ git push --set-upstream origin dev
+```
+
 >**Note**: Create PR to to merge this new branch changes to main/develop branch
