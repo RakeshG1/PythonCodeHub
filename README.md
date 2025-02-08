@@ -19,3 +19,12 @@
 
 - The major version in Python indicates a release with significant changes and possibly backward-incompatible features (e.g., Python 2 vs. Python 3).
 - The minor version indicates smaller feature updates or enhancements within the same major version (e.g., Python 3.9 vs. 3.10).
+
+- **`pytest = "*"`**:
+    - No version constraints.
+    - Poetry installs the latest available version.
+    - Future poetry update runs can upgrade pytest to any new release (including major version changes).
+- **`pytest = "^8.9"`**:
+    - Uses caret versioning, restricting updates to versions compatible with 8.9.
+    - Poetry installs a version ≥8.9.0 but <9.0.0.
+    - Future updates will only pull in patch or minor updates within the 8.x series, ensuring stability.
