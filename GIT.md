@@ -63,10 +63,10 @@ $ git push --set-upstream origin dev
 
 ```sh
 # Create Git tag
-git tag <tagname> # ex:- v0.0.1
+git tag <tag> # ex:- v0.0.1
 
 # Create Git tag with description
-git tag <tagname> -a
+git tag <tag> -a
 
 # Git tags
 git tag
