@@ -57,4 +57,22 @@ $ git revert commit-id
 $ git push --set-upstream origin dev
 ```
 
+## Git Tag
+
+- When ever we release new functionality ex:- as package distribution (poetry build) to Nexus. We have to create a Git tag for it
+
+```sh
+# Create Git tag
+git tag <tagname> # ex:- v0.0.1
+
+# Create Git tag with description
+git tag <tagname> -a
+
+# Git tags
+git tag
+
+# Push git tag
+git push origin <tag>
+```
+
 >**Note**: Create PR to to merge this new branch changes to main/develop branch
