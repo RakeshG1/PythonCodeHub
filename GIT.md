@@ -12,7 +12,7 @@ $ git rm -r --cached dist
 
 - Removes the dist folder from Git tracking (staging/index). After committing and pushing, it also removes dist from the remote repo.
 
-## Holding the changes
+## Holding the changes 
 
 ```sh
 $ git stash
