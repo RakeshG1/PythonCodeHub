@@ -57,3 +57,17 @@ $ docker images
 #hello-world   latest    d2c94e258dcb   18 months ago   13.3kB
 ```
 
+## Difference between different Base Python Images
+
+- **`Slim`**: Use when you need a small image and are okay with managing dependencies yourself.
+- **`Alpine`**: Use for an ultra-lightweight image, but be prepared for extra setup work.
+- **`Buster`**: Use when you want a more stable image with a wider range of pre-installed tools and dependencies.
+- **`Ubuntu`**: Use for maximum compatibility and ease of use, especially when working with more complex setups.
+
+and the Images are ex:- FROM python:3.11-slim
+
+- **`python:3.11`**: This is the default Python 3.11 image, which is Debian-based (Buster) and includes necessary libraries to run Python, but it may have more overhead than slim or alpine.
+- **`python:3.11-slim`**: A minimal image based on Debian, with unnecessary files removed, resulting in a smaller image size. Use this for smaller container sizes but may require manual installation of some dependencies.
+- **`python:3.11-alpine`**: The most lightweight image, based on Alpine Linux. It’s much smaller but might need extra setup to install some dependencies due to its minimalism.
+- **`python:3.11-buster`**: The Debian Buster-based version, providing a stable environment with a larger size compared to the slim version, but with more out-of-the-box compatibility for certain packages.
+- **`python:3.11-ubuntu`**: A version based on Ubuntu, which is larger but more compatible with certain libraries and tools compared to Alpine or Slim.
