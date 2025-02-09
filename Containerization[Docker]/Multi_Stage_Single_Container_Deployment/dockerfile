@@ -1,0 +1,26 @@
+# Stage 1: Build stage
+FROM python:3.11-slim AS build
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements.txt file into the container
+COPY requirements.txt .
+
+# Install the dependencies (only in the build stage)
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Stage 2: Final stage
+FROM python:3.11-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the installed dependencies from the build stage (including site-packages)
+COPY --from=build /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+
+# Copy the Python application file into the container
+COPY app.py . 
+
+# Run the Python script
+CMD ["python", "app.py"]
