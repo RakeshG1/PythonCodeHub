@@ -37,6 +37,13 @@ $ docker-compose --version
 # docker-compose version 1.29.2, build unknown
 ```
 
+- ``View files size in container``
+
+```sh
+docker exec -it <container_name_or_id> du -sh /*  # Shows the disk usage for each top-level directory
+docker exec -it <container_name_or_id> du -sh /usr/src/app/*  # Shows the disk usage for files under /usr/src/app
+```
+
 ## Difference between different Base Python Images
 
 - **`Slim`**: Use when you need a small image and are okay with managing dependencies yourself.
