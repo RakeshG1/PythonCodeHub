@@ -4,7 +4,17 @@
 
 - A ``.gitignore file`` tells Git which files or folders to ignore (not track or commit). It’s often used to exclude temporary files, build outputs, and sensitive data (like passwords or API keys) from the repository.
 
-## Remove file/folder in remote Repo
+## Remove file/folder in remote 
+
+Remove directory from Git and local
+
+```sh
+$ git rm -r one-of-the-directories // This deletes from filesystem
+$ git commit . -m "Remove duplicated directory"
+$ git push origin <your-git-branch> (typically 'master', but not always)
+```
+
+Remove directory from Git but NOT local
 
 ```sh
 $ git rm -r --cached dist
