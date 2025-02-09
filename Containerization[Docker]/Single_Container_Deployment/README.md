@@ -265,16 +265,19 @@ docker run --name python-pandas-container simple-python-image python /app/app.py
 This setup ensures that the container can read the CSV file during runtime without the need to include the file inside the image.
 
 ```sh
+# Docker images info
 rga@rgavm:~$ docker images
 #REPOSITORY            TAG       IMAGE ID       CREATED      SIZE
 #jenkins/jenkins       lts       82a2134e1742   4 days ago   468MB
 #atlassian/bitbucket   latest    d0dfcf14fed0   8 days ago   1.38GB
 
+# Docker container status
 rga@rgavm:~$ docker ps -a
 #CONTAINER ID   IMAGE                 COMMAND                  CREATED      STATUS                    PORTS     NAMES
 #e6a4413d1b9d   atlassian/bitbucket   "/usr/bin/tini -- /e…"   2 days ago   Exited (143) 2 days ago             bitbucket
 #f8513221718e   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   2 days ago   Exited (143) 2 days ago             jenkins
 
+# Docker volumes info
 rga@rgavm:~$ docker system df
 #TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
 #Images          2         2         1.849GB   0B (0%)
@@ -282,12 +285,14 @@ rga@rgavm:~$ docker system df
 #Local Volumes   2         2         522.5MB   0B (0%)
 #Build Cache     17        0         316.4MB   316.4MB
 
+# Show content
 rga@rgavm:~$ cat /home/rga/data/dummy.csv | head -n 5
 #apple,banana,orange
 #10,5,6rga@rgavm:~$ 
 
 rga@rgavm:~$ cd /mnt/Local/Git_Repo/PythonCodeHub/Containerization\[Docker\]/Single_Container_Deployment/
 
+# Show files list
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ ls -la
 #total 34
 #drwxrwxrwx 1 root root  4096 Feb  9 16:01 .
@@ -299,6 +304,7 @@ rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Cont
 #-rwxrwxrwx 1 root root 24098 Feb  9 16:04 README.md
 #-rwxrwxrwx 1 root root     6 Feb  9 15:09 requirements.txt
 
+# Build docker image
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ docker build -t simple-python-image:latest .
 #[+] Building 1.6s (11/11) FINISHED                                                                                                                                                                                                                                  docker:default
 # => [internal] load build definition from dockerfile                                                                                                                                                                                                                          0.0s
@@ -319,38 +325,47 @@ rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Cont
 # => => writing image sha256:020ec9867f0f4eebcb68e99a1c31489754c3e14052c467f3348a846ef57fa363                                                                                                                                                                                  0.0s
 # => => naming to docker.io/library/simple-python-image:latest                                                                                                                                                                                                                 0.0s
 
+# Show docker images
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ docker images
 #REPOSITORY            TAG       IMAGE ID       CREATED       SIZE
 #simple-python-image   latest    020ec9867f0f   3 hours ago   288MB
 #jenkins/jenkins       lts       82a2134e1742   4 days ago    468MB
 #atlassian/bitbucket   latest    d0dfcf14fed0   8 days ago    1.38GB
 
+# Login container as shell session, so to view all files in this container
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ docker run --name python-pandas-ext-container -v /home/rga/data/dummy.csv:/app/dummy.csv -it simple-python-image bash
 
+# Show file
 root@c39b1eaf22cf:/app# cat /app/dummy.csv 
 #apple,banana,orange
 #10,5,6root@c39b1eaf22cf:/app# 
 
+# Exit container
 root@c39b1eaf22cf:/app# exit
 #exit
 
+# Alread docker container exists with this name, so it should be removed
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ docker run --name python-pandas-ext-container -v /home/rga/data/dummy.csv:/app/dummy.csv simple-python-image python /app/ext_app.py
 #docker: Error response from daemon: Conflict. The container name "/python-pandas-ext-container" is already in use by container "c39b1eaf22cfcf45da4f5e8501c12ea3f6fdc1a2fc28236770c214c61f260153". You have to remove (or rename) that container to be able to reuse that name.
 #See 'docker run --help'.
 
+# Check docker container status
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ docker ps -a
 #CONTAINER ID   IMAGE                 COMMAND                  CREATED              STATUS                            PORTS     NAMES
 #c39b1eaf22cf   simple-python-image   "bash"                   About a minute ago   Exited (130) About a minute ago             python-pandas-ext-container
 #e6a4413d1b9d   atlassian/bitbucket   "/usr/bin/tini -- /e…"   2 days ago           Exited (143) 2 days ago                     bitbucket
 #f8513221718e   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   2 days ago           Exited (143) 2 days ago                     jenkins
 
+# Remove container along with its volume
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ docker rm -v c39b1eaf22cf
 #c39b1eaf22cf
 
+# Create docker container with mounted volume file and execute docker container
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ docker run --name python-pandas-ext-container -v /home/rga/data/dummy.csv:/app/dummy.csv simple-python-image python /app/ext_app.py
 #   apple  banana  orange
 #0     10       5       6
 
+# Check docker container status
 rga@rgavm:/mnt/Local/Git_Repo/PythonCodeHub/Containerization[Docker]/Single_Container_Deployment$ docker ps -a
 #CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS                     PORTS     NAMES
 #063f85c8ba19   simple-python-image   "python /app/ext_app…"   10 seconds ago   Exited (0) 6 seconds ago             python-pandas-ext-container
