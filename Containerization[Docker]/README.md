@@ -37,26 +37,6 @@ $ docker-compose --version
 # docker-compose version 1.29.2, build unknown
 ```
 
-- ``View Docker Containers Status``
-```bash
-$ docker ps
-# CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-```
-
-- ``View Existing Docker Images``
-```bash
-$ docker images
-# REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-```
-
-- ``Run Docker Container``
-```bash
-$ docker run hello-world
-$ docker images
-#REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
-#hello-world   latest    d2c94e258dcb   18 months ago   13.3kB
-```
-
 ## Difference between different Base Python Images
 
 - **`Slim`**: Use when you need a small image and are okay with managing dependencies yourself.
