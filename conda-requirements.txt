@@ -1,0 +1,19 @@
+pandas[pyarrow] # is used to indicate that the pandas package should be installed with the optional pyarrow dependency.
+# polars
+# pyarrow # For backend Arrow data format [from polar to pandas and vice versa]
+polars[pyarrow] # is used to indicate that the polars package should be installed with the optional pyarrow dependency.
+flask # Flask API
+connexion[swagger-ui] # For swagger
+connexion[flask]
+connexion[uvicorn]
+matplotlib
+seaborn
+svgwrite # svg image creation
+sqlalchemy
+pyodbc
+pyyaml
+tqdm
+pandas-profiling
+ipykernel
+ipython
+nbconvert # to generate jupyter notebook -> to html report
