@@ -1,0 +1,8 @@
+# Unsupported files
+.xml
+.docx
+dist/
+
+# Intention files to be ignored
+Containerization[Docker]/Intro.md
+Containerization[Docker]/.readmeimages/
